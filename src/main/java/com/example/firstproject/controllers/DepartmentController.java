@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/department")
@@ -53,7 +52,7 @@ public class DepartmentController {
 
     @PatchMapping("/{depId}/worker/{empId}")
     public ResponseEntity<DepartmentDto> updateWorkerList (@PathVariable Long depId,@PathVariable Long empId) {
-        return ResponseEntity.ok(service.updateWorkerList(depId,empId));
+        return ResponseEntity.ok(service.addNewWorker(depId,empId));
     }
 
     @PatchMapping("/{depId}/head/{empId}")
