@@ -34,20 +34,14 @@ public class EmployeeEntity {
     @OneToOne(mappedBy = "depHead")
     private DepartmentEntity headDepartment;
 
-    @ManyToOne
-    @JoinColumn(name = "department",referencedColumnName = "depTitle")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department")
     private DepartmentEntity department;
 
 
     @ManyToMany(mappedBy = "members")
     private List<ProjectEntity> projects;
-//    @Override
-//    public boolean equals(Object e) {
-//        if(e.getClass() != getClass()) return false;
-//        if(e == null) return false;
-//
-//
-//    }
+
 
     @Override
     public boolean equals(Object o) {

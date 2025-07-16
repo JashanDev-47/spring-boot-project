@@ -60,9 +60,12 @@ public class DepartmentService {
     public DepartmentDto updateDepartment(Long depId, DepartmentDto depDetails) {
 
         depExist(depId);
-
-        depDetails.setDepId(depId);
+        DepartmentEntity preEntity = repo.findById(depId).orElse(null);
         DepartmentEntity entity = mapper.map(depDetails,DepartmentEntity.class);
+
+        entity.setDepId(depId);
+        entity.setDepHead(preEntity.getDepHead());
+
         DepartmentEntity savedEntity = repo.save(entity);
 
         return mapper.map(savedEntity, DepartmentDto.class);

@@ -58,10 +58,12 @@ public class ProjectService {
     }
 
 
-    public ProjectDto updateProject(Long proectId, ProjectDto data) {
-        isValid(proectId);
+    public ProjectDto updateProject(Long projectId, ProjectDto data) {
+        isValid(projectId);
+        ProjectEntity preEntity = repo.findById(projectId).orElse(null);
         ProjectEntity entity = mapper.map(data, ProjectEntity.class);
-        entity.setProjectId(proectId);
+        entity.setProjectId(projectId);
+        entity.setMembers(preEntity.getMembers());
         ProjectEntity result = repo.save(entity);
         return mapper.map(result, ProjectDto.class);
 
