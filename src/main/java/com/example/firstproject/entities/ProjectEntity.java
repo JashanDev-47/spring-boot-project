@@ -12,7 +12,7 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
-public class ProjectEntity {
+public class ProjectEntity extends CustomAuditingFeatures{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

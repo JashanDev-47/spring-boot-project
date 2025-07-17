@@ -19,7 +19,7 @@ import java.util.Objects;
                 @UniqueConstraint(columnNames = "empEmail")
         }
 )
-public class EmployeeEntity {
+public class EmployeeEntity extends CustomAuditingFeatures{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

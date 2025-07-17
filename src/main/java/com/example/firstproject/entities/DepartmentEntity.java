@@ -20,7 +20,7 @@ import java.util.Set;
                 @UniqueConstraint(name = "dep_unique", columnNames = {"depTitle","depHead"})
         }
 )
-public class DepartmentEntity {
+public class DepartmentEntity extends CustomAuditingFeatures {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
