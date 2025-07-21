@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 import java.util.List;
 import java.util.Objects;
@@ -20,6 +21,7 @@ import java.util.Set;
                 @UniqueConstraint(name = "dep_unique", columnNames = {"depTitle","depHead"})
         }
 )
+@Audited
 public class DepartmentEntity extends CustomAuditingFeatures {
 
     @Id

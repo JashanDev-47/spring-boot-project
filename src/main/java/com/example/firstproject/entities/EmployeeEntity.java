@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 import java.util.List;
 import java.util.Objects;
@@ -19,6 +20,7 @@ import java.util.Objects;
                 @UniqueConstraint(columnNames = "empEmail")
         }
 )
+@Audited
 public class EmployeeEntity extends CustomAuditingFeatures{
 
     @Id
