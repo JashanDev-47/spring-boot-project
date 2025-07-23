@@ -36,7 +36,7 @@ public class EmployeeEntity extends CustomAuditingFeatures{
     @OneToOne(mappedBy = "depHead")
     private DepartmentEntity headDepartment;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "department")
     private DepartmentEntity department;
 

@@ -4,6 +4,9 @@ package com.example.firstproject.controllers;
 import com.example.firstproject.dto.DepartmentDto;
 import com.example.firstproject.dto.EmployeeDTO;
 import com.example.firstproject.dto.ProjectDto;
+import com.example.firstproject.entities.DepartmentEntity;
+import com.example.firstproject.entities.EmployeeEntity;
+import com.example.firstproject.entities.ProjectEntity;
 import com.example.firstproject.services.AdminService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
@@ -21,17 +24,17 @@ public class AdminController {
 
     private final AdminService service;
 
-    @GetMapping("/{depId}")
+    @GetMapping("/dep/{depId}")
     public List<DepartmentDto> getDepartmentChangesByID(@PathVariable Long depId) {
         return service.getDepartmentChangesByID(depId);
     }
 
-    @GetMapping("/{empId}")
+    @GetMapping("/emp/{empId}")
     public List<EmployeeDTO> getEmployeeChangesByID(@PathVariable Long empId) {
         return service.getEmployeeChangesByID(empId);
     }
 
-    @GetMapping("/{projectId}")
+    @GetMapping("/project/{projectId}")
     public List<ProjectDto> getProjectChangesById(@PathVariable Long projectId) {
         return service.getProjectChangesById(projectId);
     }

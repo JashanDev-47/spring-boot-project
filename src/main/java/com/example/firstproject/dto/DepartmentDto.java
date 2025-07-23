@@ -11,7 +11,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DepartmentDto {
+public class DepartmentDto extends AuditingAccessDTO {
 
     private Long depId;
     private String depTitle;

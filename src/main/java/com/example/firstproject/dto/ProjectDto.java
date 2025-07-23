@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProjectDto {
+public class ProjectDto extends AuditingAccessDTO  {
 
     private Long projectId;
     private String title;
